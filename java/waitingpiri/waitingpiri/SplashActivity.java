@@ -30,7 +30,6 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
         setContentView(R.layout.activity_splash);
 
         this.checkLocationAPI();
-        this.verificarGps();
         this.showSplash();
     }
 
@@ -65,7 +64,9 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    SplashActivity.this.finish();
+                    SplashActivity.this.startActivity(intent);
                 }
             }
         };
