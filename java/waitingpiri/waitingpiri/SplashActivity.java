@@ -30,6 +30,7 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
         setContentView(R.layout.activity_splash);
 
         this.checkLocationAPI();
+        this.verificarGps();
         this.showSplash();
     }
 
