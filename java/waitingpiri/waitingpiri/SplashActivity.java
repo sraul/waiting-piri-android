@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
         setContentView(R.layout.activity_splash);
 
         this.checkLocationAPI();
-
+        this.verificarGps();
         this.showSplash();
     }
 
@@ -65,18 +65,21 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    if (SplashActivity.this.locationManager
-                            .isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                        SplashActivity.this.startActivity(intent);
 
-                    } else {
-                        solicitarGPS();
-                    }
                 }
             }
         };
         splash.start();
+    }
+
+    /**
+     * verifica si esta activo el gps..
+     */
+    private void verificarGps() {
+        if (!SplashActivity.this.locationManager
+                .isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            this.solicitarGPS();
+        }
     }
 
     /*
@@ -99,6 +102,7 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
 
                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        SplashActivity.this.finish();
                     }
                 })
                 .create().show();
