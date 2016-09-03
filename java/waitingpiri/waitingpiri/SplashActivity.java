@@ -31,7 +31,6 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
 
         this.checkLocationAPI();
         this.verificarGps();
-        this.showSplash();
     }
 
     /**
@@ -78,8 +77,10 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
      * verifica si esta activo el gps..
      */
     private void verificarGps() {
-        if (!SplashActivity.this.locationManager
+        if (SplashActivity.this.locationManager
                 .isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            this.showSplash();
+        } else {
             this.solicitarGPS();
         }
     }
@@ -99,6 +100,7 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
                         Intent gpsSetting = new Intent(
                                 Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                         startActivity(gpsSetting);
+                        SplashActivity.this.verificarGps();
                     }
                 })
 
