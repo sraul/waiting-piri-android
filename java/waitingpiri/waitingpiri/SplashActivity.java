@@ -17,12 +17,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import waitingpiri.waitingpiri.location.LocationService;
+
 public class SplashActivity extends AppCompatActivity implements LocationListener {
 
     private static final long SEND_LOCATION_TIME = (5000);
     private static final int PERMISSION_LOCATION_REQUEST_COD = 1;
 
-    private LocationManager locationManager;
+    public static LocationManager locationManager;
+    public static SplashActivity splashActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
 
         this.checkLocationAPI();
         this.verificarGps();
+        this.splashActivity = this;
+
+        Intent intent = new Intent(this, LocationService.class);
+        startService(intent);
     }
 
     /**
