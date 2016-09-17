@@ -17,13 +17,15 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="De Asunción a Piribebuy"
-        android:layout_margin="20dp"/>
+        android:text="De Piribebuy a Asunción"
+        android:layout_margin="20dp"
+        android:onClick="ida"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="De Piribebuy a Asunción"
-        android:layout_margin="20dp"/>
+        android:text="De Asunción a Piribebuy"
+        android:layout_margin="20dp"
+        android:onClick="vuelta"/>
 
 </LinearLayout>
