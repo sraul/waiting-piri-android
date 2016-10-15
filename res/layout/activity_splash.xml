@@ -15,19 +15,11 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="166dp"
-        android:src="@drawable/ico_wp"
+        android:src="@drawable/logo"
         android:id="@+id/imageView"
         android:layout_weight="0.55" />
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Waiting Piri"
-        android:gravity="center"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        />
 
     <TextView
         android:layout_width="match_parent"

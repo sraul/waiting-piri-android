@@ -11,7 +11,7 @@
     android:layout_marginBottom="60dp"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/ico_wp"
+    android:background="@drawable/logo"
     tools:context="waitingpiri.waitingpiri.MainActivity">
 
     <Button
