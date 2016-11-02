@@ -15,7 +15,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="166dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo_big"
         android:id="@+id/imageView"
         android:layout_weight="0.55" />
 
