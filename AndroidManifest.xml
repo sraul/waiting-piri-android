@@ -40,8 +40,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MapaIdaActivity" />
-        <activity android:name=".MapaVueltaActivity"></activity>
     </application>
 
 </manifest>

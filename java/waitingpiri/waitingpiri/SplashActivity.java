@@ -35,9 +35,6 @@ public class SplashActivity extends AppCompatActivity implements LocationListene
         this.checkLocationAPI();
         this.verificarGps();
         this.splashActivity = this;
-
-        Intent intent = new Intent(this, LocationService.class);
-        startService(intent);
     }
 
     /**

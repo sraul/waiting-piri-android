@@ -13,19 +13,27 @@
     android:orientation="vertical"
     tools:context="waitingpiri.waitingpiri.MainActivity">
 
-    <Button
+    <EditText
+        android:id="@+id/nro_colectivo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/icono"
-        android:text="De Piribebuy a Asunción"
+        android:hint="INGRESE EL NRO. DE COLECTIVO"
+        android:textAlignment="center"
+        android:background="#008080"
+        android:textColor="#FFFFFF"
         android:layout_margin="20dp"
-        android:onClick="ida"/>
+        android:padding="10dp"
+        android:inputType="number"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="De Asunción a Piribebuy"
-        android:drawableLeft="@drawable/icono"
+        android:text="MARCAR IDA (De Piribebuy a Asunción)" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MARCAR VUELTA (De Asunción a Piribebuy)"
         android:layout_margin="20dp"
         android:onClick="vuelta"/>
 
