@@ -74,6 +74,16 @@ public class LocationService extends Service implements LocationListener {
     public void onDestroy() {
         Log.i("waitingPiriService", "servicio terminado..");
         super.onDestroy();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ){
+                ActivityCompat.requestPermissions(
+                        SplashActivity.splashActivity,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
+                        PERMISSION_LOCATION_REQUEST_COD);
+            }
+        }
+        this.locationManager.removeUpdates(this);
     }
 
     /** Location Listener **/

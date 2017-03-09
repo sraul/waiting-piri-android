@@ -28,7 +28,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MARCAR IDA (De Piribebuy a Asunción)" />
+        android:text="MARCAR IDA (De Piribebuy a Asunción)"
+        android:onClick="ida"/>
 
     <Button
         android:layout_width="match_parent"
@@ -36,5 +37,12 @@
         android:text="MARCAR VUELTA (De Asunción a Piribebuy)"
         android:layout_margin="20dp"
         android:onClick="vuelta"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MARCAR LLEGADA"
+        android:layout_margin="20dp"
+        android:onClick="llegada"/>
 
 </LinearLayout>

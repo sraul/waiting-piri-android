@@ -16,23 +16,26 @@ public class MainActivity extends AppCompatActivity {
     public static String NRO_COLECTIVO;
 
     private EditText editText;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.editText = (EditText) findViewById(R.id.nro_colectivo);
+        this.intent = new Intent(this, LocationService.class);
     }
     public void ida(View v){
         FLAG = FLAG_IDA;
         NRO_COLECTIVO = editText.getText().toString();
-        Intent intent = new Intent(this, LocationService.class);
         startService(intent);
     }
     public void vuelta(View v){
         FLAG = FLAG_VUELTA;
         NRO_COLECTIVO = editText.getText().toString();
-        Intent intent = new Intent(this, LocationService.class);
         startService(intent);
+    }
+    public void llegada(View v) {
+        stopService(intent);
     }
 }
